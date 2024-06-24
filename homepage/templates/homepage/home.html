@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYR Training Platform</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'documentation.css' %}">
+    <link rel="stylesheet" href="{% static 'testsPage.css' %}">
+    <link rel="stylesheet" href="{% static 'questions.css' %}">
+    <link rel="stylesheet" href="{% static 'videosPage.css' %}">
+    <link rel="stylesheet" href="{% static 'certification.css' %}">
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="{% static 'document.js' %}" defer></script>
+  <script src="{% static 'testsPage.js' %}" defer></script>
+  <script src="{% static 'home.js' %}" defer></script>
+  <script src="{% static 'certification.js' %}" defer></script>
+  <script src="{% static 'CORE.js' %}" defer></script>
+</head>
+<body>
+    <div id="all-content">
+        <div id="top-nav-bar">
+            <div id="top-nav-bar-top-half">
+                <p><span id="websiteTitle">AYR Training Platform</span><span id="usersname">Signed in as {{user.username}}</span><br><span id="movingLogOutOver"></span><a href="/logout" id="userLogout">Logout</a></p><br>
+            </div>
+            <div id="top-nav-bar-bottom-half">
+                <a href="/documentation"><div class="top-nav-bar-bottom-half-text">Documentation</div></a> 
+                <a href="/videosPage"><div class="top-nav-bar-bottom-half-text">Videos</div></a> 
+                <a href="/testsPage"><div class="top-nav-bar-bottom-half-text">Tests</div></a> 
+                <a href="/questionsPage"><div class="top-nav-bar-bottom-half-text">View Questions</div></a>
+                <a href="/ask-question"><div class="top-nav-bar-bottom-half-text">Ask a Question</div></a>
+            </div> 
+        </div>
+        <div id="content-body">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "homepage/home.html" %}
+{% load static %}
+{% block content %}
+<div id="certificationPageContent">
+    {% for groups1 in user.groups.all %}
+        {% if groups1.name == 'Test1Certification' %}
+            <p id="" class="" >AYR Developer Certification</p>
+        {% elif  groups1.name == 'Test2Certification' %}
+            <p id="" class="" >AYR AI Engineer Certification</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

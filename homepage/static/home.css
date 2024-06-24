@@ -1,0 +1,96 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    overflow:visible;
+}
+p {
+    margin: 0px;
+    margin-top: 2vh;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* #all-content {
+    display: grid;
+    grid-template-rows: 12vh 1fr;
+    position: sticky;
+    overflow: visible;
+    height: 100vh;
+    width: 100vw;
+} */
+
+#top-nav-bar {
+    grid-row: 1 /2;
+    display: grid;
+    grid-template-rows: 6vh 6vh;
+    position: fixed;
+}
+
+#top-nav-bar-top-half {
+    grid-row: 1 /2;
+    background-color: rgb(8, 61, 113);
+    color: white;
+}
+
+#top-nav-bar-bottom-half {
+    grid-row: 2 /3;
+    background-color: white;
+    color: white;
+}
+
+.top-nav-bar-bottom-half-text {
+    color: black;
+    padding: 1.65vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    float: left;
+}
+
+.top-nav-bar-bottom-half-text:hover {
+    color: white;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+#websiteTitle {
+    position: absolute;
+    margin-top: 1.5vh;
+    margin-left: 3px;
+}
+#usersname {
+    padding: 3px;
+    float: right;
+    border: none;
+    padding-right: 4px;
+}
+
+#movingLogOutOver {
+    float: left;
+    width: 95vw;
+}
+
+#userLogout {
+    float: right;
+    font-size: 11px;
+    text-align: right;
+    width: 5vw;
+    padding-right: 4px;
+    color: white;
+}
+
+#userLogout:visited {
+    color: white;
+}
+
+#userLogout:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#content-body {
+    grid-row: 2 /3;
+    background-color: red;
+    display: contents;
+}
