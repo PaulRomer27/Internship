@@ -1,0 +1,19 @@
+{% extends "homepage/home.html" %}
+{% load static %}
+{% block content %}
+<div class="content questionWrapper">
+    <h2 class="viewAllQuestionsHeaders">Previous Questions</h2>
+    {% if questions|length > 0 %}
+        {% for question in questions %}
+        <a href="/question/{{ question.qid }}/{{ question.slug }}">
+            <div class="viewQuestionsQuestionContainter">
+                <h2 class="viewAllQuestionsHeaders">{{ question.question_title }}</h2>
+                <p>{{ question.question_text|truncatechars:300 }}</p><br>
+            </div>
+        </a>
+        {% endfor %}
+    {% else %}
+            <div>no questions</div>
+    {% endif %}
+</div>
+{% endblock %}

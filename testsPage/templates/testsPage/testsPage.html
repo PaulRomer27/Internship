@@ -1,0 +1,22 @@
+{% extends "homepage/home.html" %}
+{% load static %}
+{% block content %}
+<div id="testsPageContainer">
+    <a href="certificationPage" id="" class="testsBoxes">View All Certifications</a>
+    {% for groups1 in user.groups.all %}
+        {% if groups1.name == 'RequireTest1' %}
+                <div id="" class="testsBoxes" value="1">AYR Developer Certification Test</div>
+        {% elif  groups1.name == 'RequireTest2' %}
+            <div id="" class="testsBoxes" value="2">AYR AI Engineer Certification Test</div>
+        {% elif  groups1.name == 'Test3Certification' %}
+            <div id="" class="testsBoxes">Data Perfection Platform Test</div>
+        {% elif  groups1.name == 'Test4Certification' %}
+            <div id="" class="testsBoxes">Field Operator Guide Test</div>
+        {% elif  groups1.name == 'Test5Certification' %}
+            <div id="" class="testsBoxes">Super Admin Test</div>
+        {% elif  groups1.name == 'Test6Certification' %}
+            <div id="" class="testsBoxes">Intelligent Data Simulator Test</div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

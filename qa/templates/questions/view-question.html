@@ -1,0 +1,36 @@
+{% extends "homepage/home.html" %}
+{% load static %}
+{% block content %}
+    <div class="questionWrapper">
+        <a href="/questionsPage"><h3 id="viewQuestionsReturn">Back to all questions</h3></a>
+        <div class="content" id="viewQuestionAllContent">
+            <div id="viewQuestionQuestion">
+                <h2 id="viewQuestionQuestionTitle">{{ question.question_title }}</h2>
+                <p class="holdLineSpacing">{{ question.question_text|safe }}</p><br>
+                <p id="viewQuestionPosterData" class="questiondetails askQuestionQuestionPostData">Posted on  <strong>{{ question.date_posted }}</strong> by <strong>{{ question.posted_by }}</strong></p>
+            </div>
+            <div id="answers">
+            {% for answer in answers %}
+                <p class="askQuestionQuestionPostData"><strong>{{ answer.posted_by }}</strong>: <strong>{{ answer.date_posted }}</strong></p>
+                <div class="viewQuestionResponse"><p class="viewQuestionResponses holdLineSpacing">{{ answer.answer_text|safe }}</p></div>
+            {% endfor %}
+            </div>
+            <form class="reply" action="" method="post">
+                {% csrf_token %}
+                <textarea name="answer" id="answer" rows="8" cols="80" placeholder="Post an answer"></textarea><br>
+                <input type="button" name="answer_question" id="answer_question" value="Answer"><span> as</span>
+                <input type="text" id="posted_by" name="posted_by" value={{user.username}} autocomplete="off" readonly><br>
+                <input type="hidden" id="qid" name="qid" value="{{ question.qid }}">
+               
+            </form>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/core.js' %}"></script>
+        <script type="text/javascript">
+            var csrftoken = getCookie("csrftoken");
+        </script>
+    </div>
+{% endblock %}

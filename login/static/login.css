@@ -1,0 +1,83 @@
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+#container {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 20vh;
+}
+#message {
+  text-align: center;
+  margin-bottom: 0px;
+}
+#title {
+    font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+#forms-container {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+#login {
+    border-radius: 55px;
+    width: 25vw;
+    padding: 10px;
+    background-color: rgba(3, 177, 252, 50%);
+    border: none;
+    color: whitesmoke;
+    font-size: large;
+}
+#login:hover {
+    background-color: rgba(3, 177, 252, 100%);
+        cursor:pointer;
+border: 1px black solid;}
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+
+@media (max-width: 767px) {
+    #container {
+        width: 85%;
+    }
+}

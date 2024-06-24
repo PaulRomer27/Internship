@@ -1,0 +1,41 @@
+{% extends "homepage/home.html" %}
+{% load static %}
+{% block content %}
+        <div id="askQuestionContent" class="content">
+            <div id="askQuestionBorderShadow">
+            <h2 id="askQuestionMainHeader">Ask a Question</h2>
+            <form class="" action="ask-question" method="post">
+                {% csrf_token %}
+                <h4 class="askQuestionHeader">Question Title <span class="askQuestionAsterisk">*</span></h4>
+                {% if questionTitle %}
+                    <input id="askQuestionQuestionTitle" class="askQuestionInput" type="text" name="title" value={{questionTitle}} autocomplete="off" placeholder="Title"><br>
+                {% else %}
+                    <input id="askQuestionQuestionTitle" class="askQuestionInput" type="text" name="title" value="" autocomplete="off" placeholder="Title"><br><br>
+                {% endif%}
+                <h4 class="askQuestionHeader">Question <span class="askQuestionAsterisk">*</span></h4>
+                <div>
+                    {% if questionContent %}
+                        <textarea id="askQuestionTextArea" class="askQuestionInput"name="question" rows="8" cols="80" placeholder="Message">{{ questionContent }}</textarea>
+                    {% else %}
+                        <textarea id="askQuestionTextArea" class="askQuestionInput"name="question" rows="8" cols="80" placeholder="Message"></textarea>
+                    {% endif%}
+                </div><br>
+                <label for="questionGroup">Choose a Group:</label>
+
+                <select name="questionGroup" id="questionGroup" size="1">
+                <option value="General">General</option>
+                <option value="Group2">Group 2</option>
+                <option value="Group3">Group 3</option>
+                <option value="Misc">Misc.</option>
+                </select>
+                
+
+                <div id="askQuestionNameLabel">Asked By: <input id="askQuestionNameInput" type="text" name="posted_by" value={{user.username}} autocomplete="off" readonly></div>
+                <input id="askQuestionSubmit" class="askQuestionInput" type="submit" name="ask" value="Post Question">
+            </form>
+            {% if error %}
+                <br><p id="askQuestionError" class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+        </div>
+{% endblock %}
